@@ -1,0 +1,26 @@
+#####
+What do we do
+#####
+Basically we need to download data from the website. Since the data files are too big, I failed to download all of them. So, what I decided to do was to test the functionality I implemented as building blocks for this task.
+The idea to achieve the goal is that we need to clean up the dataset first in order to make it smaller but keep all useful data. There is a function in my program to do it. It sums up a 3-gram and keep one entry for it. The search speed is much better than 
+before.
+The second step was to build a tool to search according to a rule. I defined rules as "match first", "match second", "match third", "match second and third"(as required), "match all" and "match any". (function written, not fully tested)
+The third step would be using the tool to build the essay. (not done)
+
+#####
+How to do
+#####
+1. DOWNLOAD THE DATA
+   ./Download.sh
+   after download it, we could cat them together.
+
+2. Compile
+   gcc EssayMaker.c -o EssayMaker
+ 
+3. Clean up the data
+   ./EssayMaker clean <filename> > <cleaned file>
+   NOTE: there is bug: the first line of the output file should be removed.
+ 
+4. The search tool
+   ./EssayMaker seearch <filename> 
+   NOTE: as it is unfinished the rule currently is hard coded as match second "POEM". 
